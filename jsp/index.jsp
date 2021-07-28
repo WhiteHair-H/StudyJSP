@@ -1,29 +1,127 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='text/html'>
-    <title>JSP 게시판 웹 사이트</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href='css/bootstrap.css'>
-    
+<meta charset="UTF-8">
+<!-- 화면 최적화 -->
+<meta name="viewport" content="width-device-width", initial-scale="1">
+<script type="text/javascript" src="js/main.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<title>회원가입 화면</title>
 </head>
 <body>
-    <nav class="navbar navbar-default">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle cllapsed"
-            data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
+<ul class="nav">
+  <li onclick="showLogin()">Login</li>
+  <li onclick="showSignup()">Sign up</li>
+  <li onclick="showForgotPassword()">Forgot password</li>
+  <li onclick="showSubscribe()">Subscribe</li>
+  <li onclick="showContactUs()">Contact us</li>
+</ul>
+<div class="wrapper">
+  <div class="rec-prism">
+    <div class="face face-top">
+      <div class="content">
+        <h2>Subscribe</h2>
+        <small>Enter your email so we can send you the latest updates!</small>
+        <form onsubmit="event.preventDefault()">
+          <div class="field-wrapper">
+            <input type="text" name="email" placeholder="email">
+            <label>e-mail</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="submit" onclick="showThankYou()">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="face face-front">
+      <div class="content">
+        <h2>Sign in</h2>
+        <form onsubmit="event.preventDefault()">
+          <div class="field-wrapper">
+            <input type="text" name="username" placeholder="username">
+            <label>username</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="password" name="password" placeholder="password" autocomplete="new-password">
+            <label>password</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="submit" onclick="showThankYou()">
+          </div>
+          <span class="psw" onclick="showForgotPassword()">Forgot Password?   </span>
+          <span class="signup" onclick="showSignup()">Not a user?  Sign up</span>
+        </form>
+      </div>
+    </div>
+    <div class="face face-back">
+      <div class="content">
+        <h2>Forgot your password?</h2>
+        <small>Enter your email so we can send you a reset link for your password</small>
+        <form onsubmit="event.preventDefault()">
+          <div class="field-wrapper">
+            <input type="text" name="email" placeholder="email">
+            <label>e-mail</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="submit" onclick="showThankYou()">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="face face-right">
+      <div class="content">
+        <h2>Sign up</h2>
+        <form onsubmit="event.preventDefault()">
+          <div class="field-wrapper">
+            <input type="text" name="email" placeholder="email">
+            <label>e-mail</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="password" name="password" placeholder="password" autocomplete="new-password">
+            <label>password</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="password" name="password2" placeholder="password" autocomplete="new-password">
+            <label>re-enter password</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="submit" onclick="showThankYou()">
+          </div>
+          <span class="singin" onclick="showLogin()">Already a user?  Sign in</span>
+        </form>
+      </div>
+    </div>
+    <div class="face face-left">
+      <div class="content">
+        <h2>Contact us</h2>
+        <form onsubmit="event.preventDefault()">
+          <div class="field-wrapper">
+            <input type="text" name="name" placeholder="name">
+            <label>Name</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="text" name="email" placeholder="email">
+            <label>e-mail</label>
+          </div>
+          <div class="field-wrapper">
+            <textarea placeholder="your message"></textarea>
+            <label>your message</label>
+          </div>
+          <div class="field-wrapper">
+            <input type="submit" onclick="showThankYou()">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="face face-bottom">
+      <div class="content">
+        <div class="thank-you-msg">
+          Thank you!
         </div>
-    </nav>
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
